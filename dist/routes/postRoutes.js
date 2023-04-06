@@ -1,0 +1,10 @@
+import { Router } from "express";
+import validateSchema from "../middlewares/validateSchema.js";
+import postSchema from "../schemas/postSchema.js";
+import postControllers from "../controllers/postControllers.js";
+var postRoutes = Router();
+postRoutes.get("/timeline", postControllers.list);
+postRoutes.post("/post", validateSchema(postSchema), postControllers.post);
+postRoutes.put("/put", function () { return console.log('put'); });
+postRoutes.delete("/delete", function () { return console.log('delete'); });
+export default postRoutes;
