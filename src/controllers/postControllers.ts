@@ -2,12 +2,12 @@ import express, { Request, Response } from "express";
 import postServices from "../services/postServices.js";
 
 
-function list(req:Request, res:Response){
+async function list(req:Request, res:Response){
 
    try {
 
-    const timeline = postServices.getTimeline();
-    return res.send(timeline);
+    const timeline:[] = await postServices.getTimeline();
+    res.send(timeline);
 
    } catch (error) {
     res.status(500).send(error.message)

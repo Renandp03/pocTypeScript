@@ -1,4 +1,4 @@
-import Joi from "../../node_modules/joi/lib/index.js"
+import Joi from "joi"
 
 const postSchema = Joi.object({
     owner:Joi.string().min(2).required(),

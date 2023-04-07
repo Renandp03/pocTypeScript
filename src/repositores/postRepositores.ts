@@ -1,7 +1,7 @@
 import db from "../config/database.js";
 
 async function timeline(){
-    return db.query(
+    return await db.query(
         `
         SELECT * FROM posts
         `
